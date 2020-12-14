@@ -1,0 +1,23 @@
+<div class='fixed-top navbar navbar-expand-md bg-dark' style="height: 60px">
+  <div class='container'>
+  <div class="collapse navbar-collapse">
+    <h3
+    class="text-danger navbar-brand my-auto pr-4"
+    routerLink="clemson">ClemsonProfessors</h3>
+  </div>
+    <form>
+    <div class="input-group">
+    <input
+    name="searchbar"
+    [(ngModel)]="input"
+    type="text"
+    class="form-control form-inline"
+    placeholder="search for anything...">
+    <div class="input-group-append d-inline">
+      <button class="btn btn-primary" type="submit" (click)="search()">Search</button>
+    </div>
+  </div>
+  </form>
+</div>
+</div>
+<router-outlet></router-outlet>
