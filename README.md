@@ -1,13 +1,15 @@
-# Clemson Professor Search #
-> Search for any professor at Clemson and find data about their Hirsch-Index, grade distributions, and the classes they teach. Built using Angular, Firebase, and d3.js.
+# professor-search
 
-## Live at https://clemsonprofessors.web.app/ ##
+## Overview
+Find in-depth information about the professors at Clemson University including research statistics, visualized grade distributions, and the classes they teach. This web app was built with the Angular web framework and d3.js, and data was sourced from Clemson University Archives and Scopus.
 
-![demo](https://github.com/aru-py/ClemsonProfessors/blob/master/ClemsonProfessorsDemo.gif)
+## Prototype
+A working example will be permanently available at [clemsonprofessors.web.app](https://clemsonprofessors.web.app/), however the data used is from Fall 2019 so newer professors are not in the database.
 
+<br>
+<p align="center">
+<img width="50%" src="/github/professor_search_demo.gif"></img>
+</p>
 
-*Data sourced from:*
-- Grade Distributions: [Clemson's Grade Distribution Report](https://www.clemson.edu/institutional-effectiveness/oir/GDR.html)
-- H-Index: [Scopus](https://www.scopus.com/freelookup/form/author.uri)
-
-*Note: Not affiliated with Clemson University*
+## Notes
+I will no longer be maintaining this project, but if anyone wishes to contribute, they are free to clone and modify this repository.
