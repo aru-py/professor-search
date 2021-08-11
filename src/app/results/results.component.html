@@ -23,8 +23,8 @@
             <div class='card-body'>
               <h2 class="card-title">Legend</h2>
             <div>
-                <div class='btn btn-primary' [ngClass]="{'btn-primary': showProfessors}" (click) = 'changeMode(0)'>Professors</div>
-                <div class='btn btn-primary' [ngClass] ="{'btn-primary': !showProfessors}" (click) = 'changeMode(1)'>Courses</div>
+                <div class='btn' [ngClass]="{'btn-primary': showProfessors}" (click) = 'changeMode(0)'>Professors</div>
+                <div class='btn' [ngClass] ="{'btn-primary': !showProfessors}" (click) = 'changeMode(1)'>Courses</div>
                 <hr>
                 <div>
                   <div class="row no-gutters" *ngFor="let icon of icons">

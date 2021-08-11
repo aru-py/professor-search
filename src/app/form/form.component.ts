@@ -38,8 +38,11 @@ export class FormComponent implements OnInit {
       query: this.professorName + ' ' + this.className,
       time: moment().format('MMMM Do YYYY h:mm A ')
     };
-    this.router.navigate(['clemson/results'], {queryParams: searchQuery})
-      .then(r => this.http.post('https://clemsonprofessors.firebaseio.com/searches.json',
-      searchQuery).subscribe((e) => console.log(e)));
+    this.router.navigate(['results'], {queryParams: searchQuery})
+      .then();
+
+    /* old endpoint */
+    // r => this.http.post('https://clemsonprofessors.firebaseio.com/searches.json',
+    //       searchQuery).subscribe((e) => console.log(e))
   }
 }

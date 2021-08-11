@@ -1,5 +1,5 @@
 <div id="professorBar" class="col-md" *ngIf="type == 'professors'">
-  <div *ngFor="let result of data" class='card my-1' routerLink="/clemson/professor/{{result.Professor}}">
+  <div *ngFor="let result of data" class='card my-1' routerLink="/professor/{{result.Professor}}">
     <div class='card-body py-2'>
       <div class='row'>
         <div class='col text-left'>
@@ -17,7 +17,7 @@
 
 
 <div id="coursesBar" class="col-md" *ngIf="type == 'courses'">
-  <div *ngFor="let result of data" class='card my-1' routerLink="/clemson/course/{{result.Id}}">
+  <div *ngFor="let result of data" class='card my-1' routerLink="/course/{{result.Id}}">
     <div class='card-body py-2'>
       <div class='row'>
         <div class='col text-left'>

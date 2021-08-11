@@ -23,7 +23,7 @@ export class CourseComponent implements OnInit {
 
     this.course = this.data.getCourse(this.params);
     if (typeof this.course == "undefined")
-      this.router.navigate(['clemson/notfound']);
+      this.router.navigate(['/notfound']);
     this.route.params.subscribe (
       (param) => this.params = param['id']
     )

@@ -22,7 +22,7 @@ export class ProfessorComponent implements OnInit {
     this.professor = this.data.getProfessor(name);
 
     if (typeof this.professor === 'undefined') {
-      this.router.navigate(['clemson/notfound']);
+      this.router.navigate(['/notfound']).then();
     }
     this.classes = this.data.getCoursesForProfessor(this.professor.Courses);
 
