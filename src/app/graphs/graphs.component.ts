@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {DataService} from '../data.services';
 import * as d3 from 'd3';
 
@@ -24,8 +24,10 @@ export class GraphsComponent implements OnInit {
 
     const svg = d3.select('#chart-area')
       .append('svg')
-      .attr('width', 540)
-      .attr('height', 380)
+      .attr('width', '100%')
+      .attr('height', '100%')
+      .attr("preserveAspectRatio", "xMinYMin meet")
+      .attr("viewBox", "0 0 540 380")
       .append('g')
       .attr('transform', `translate(${width / 2}, ${height / 2})`);
 
@@ -62,7 +64,7 @@ export class GraphsComponent implements OnInit {
         .attr('d', arc)
         .attr('stroke', 'white')
         .attr('stroke-width', '6px')
-        .each(function(d) {
+        .each(function (d) {
           this._current = d;
         });
 

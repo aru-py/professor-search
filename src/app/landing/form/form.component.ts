@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {Router} from '@angular/router';
-import {DataService} from '../data.services';
+import {DataService} from '../../data.services';
 import {HttpClient} from '@angular/common/http';
 import * as moment from 'moment';
 

@@ -1,0 +1,67 @@
+<form #f="ngForm" (ngSubmit)="onSubmit()">
+
+  <!--Professor Search-->
+  <div class='form-group'>
+    <label for='professorName'>Professor</label>
+    <input
+      #prof="ngModel"
+      [(ngModel)]="professorName"
+      type="text"
+      autocomplete="off"
+      class='form-control'
+      id="professorName"
+      name="professorName"
+      placeholder="Albus Dumbledore"/>
+    <div>
+      <div *ngIf="prof.dirty" class='w-25 card shadow'
+           style="min-width: 200px"
+           id="profAutocomplete">
+        <table class="table table-sm text-center mb-0">
+          <tr *ngFor="let result of data.searchProfessors(professorName).slice(0,5)">
+            <td
+              (click)="professorName = result.Professor"
+              *ngIf="professorName != result.Professor">{{result.Professor}}
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <!--Class Search-->
+  <div class='form-group mb-3'>
+    <label for='className'>Class</label>
+    <input
+      #course="ngModel"
+      [(ngModel)]="className"
+      autocomplete="off"
+      class='form-control'
+      id="className"
+      name="className"
+      placeholder="WIZ 101"
+      type='text'/>
+    <div>
+      <div *ngIf="course.dirty" class='w-25 card shadow'
+           style="min-width: 200px"
+           id="courseAutocomplete">
+        <table class="table table-sm text-center mb-0">
+          <tr *ngFor="let result of data.searchCourses(className).slice(0,5)">
+            <td
+              (click)="className = result.Course"
+              *ngIf="className != result.Course">{{result.Course}}
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!--Search Button-->
+  <div class="row flex-row-reverse no-gutters">
+    <button [ngClass]="{'btn-danger':f.dirty}"
+            class='btn btn-primary col-12 col-sm-6 col-md-4 col-lg-2'
+            type='submit'>Search
+    </button>
+  </div>
+
+</form>

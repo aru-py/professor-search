@@ -1,32 +1,33 @@
-<section class="py-5 my-3" *ngIf="display">
+<section class="py-5 min-vh-100"
+         *ngIf="display">
 
-    <header>
-      <div class='container'>
-          <h1 class="mb-n1">{{professor['Professor']}}</h1>
-          <h4>
-          <span class="text-danger">{{professor['Title']}}, </span>
-          <span class="text-muted">{{professor['Department']}}</span>
-          </h4>
-          <span class="text-right d-inline"><app-icons [input]="professor"></app-icons></span>
-        </div>
-    </header>
+  <div class="container py-5">
+    <!--Title-->
+    <div>
+      <h1 class="display-2">{{professor['Professor']}}</h1>
+      <h4>
+        <span class="text-danger">{{professor['Title']}}, </span>
+        <span class="text-muted">{{professor['Department']}}</span>
+      </h4>
+      <span class="text-right d-inline"><app-icons [input]="professor"></app-icons></span>
+    </div>
 
-
-
-  <div class='container'>
-    <h2>Statistics</h2>
-    <div class='row'>
-      <div class='col-6 '>
-        <h5 class="text-center">Grade Distribution</h5>
-        <div class="mx-auto my-3">
-          <app-graphs [prof]="professor"></app-graphs>
+    <!--Chart-->
+    <div>
+      <h2>Statistics</h2>
+      <div class="mb-3">
+        <h5>Grade Distribution</h5>
+        <div class="row">
+          <app-graphs class="col-12 col-lg-6" [prof]="professor" ></app-graphs>
         </div>
       </div>
     </div>
-    <h2 class="mb-3">Courses</h2>
 
-    <app-cards [type]="'courses'" [data]="classes"></app-cards>
-
-
+    <!--Suggestions-->
+    <div>
+      <h2 class="mb-3">Courses</h2>
+      <app-cards [type]="'courses'" [data]="classes"></app-cards>
+    </div>
   </div>
+
 </section>

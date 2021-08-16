@@ -1,10 +1,12 @@
-<div id="professorBar" class="col-md" *ngIf="type == 'professors'">
+<div *ngIf="type == 'professors'" id="professorBar">
   <div *ngFor="let result of data" class='card my-1' routerLink="/professor/{{result.Professor}}">
     <div class='card-body py-2'>
       <div class='row'>
         <div class='col text-left'>
 
-          <h5 class="mb-0">{{result.Professor}} <app-icons [input]="result"></app-icons> </h5>
+          <h5 class="mb-0">{{result.Professor}}
+            <app-icons [input]="result"></app-icons>
+          </h5>
           <h6 class='text-muted'>{{result.Title}}</h6>
         </div>
         <div class='col text-right my-auto'>
@@ -16,7 +18,7 @@
 </div>
 
 
-<div id="coursesBar" class="col-md" *ngIf="type == 'courses'">
+<div *ngIf="type == 'courses'" id="coursesBar">
   <div *ngFor="let result of data" class='card my-1' routerLink="/course/{{result.Id}}">
     <div class='card-body py-2'>
       <div class='row'>

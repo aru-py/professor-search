@@ -1,55 +1,57 @@
 <section class="bg-light my-3 py-5 min-vh-100">
-  <div class='container' style="min-height: 500px">
-    <div>
-      <h1 *ngIf="showProfessors">Search Professors for <span class='text-primary'>"{{query.get('query').trim()}}"</span></h1>
-      <h1 *ngIf="!showProfessors">Search Classes for <span class='text-primary'>"{{query.get('query').trim()}}"</span></h1>
+  <div class='container pt-5' style="min-height: 500px">
+    <div class="mb-4">
+      <h1 class="display-2"  style="line-height: .8" >Search {{showProfessors ? 'Professors' : 'Classes'}} for
+        <span class='text-primary'>"{{query.get('query').trim()}}"</span>
+      </h1>
     </div>
-    <div class="my-2">
-      <form (ngSubmit)="onSubmit()" >
+
+    <!--Search Bar-->
+    <div class="my-2 mb-3">
+      <form (ngSubmit)="onSubmit()">
         <div class='row no-gutters'>
-          <div class='input-group col-10'>
-            <input type='text' class="form-control" [(ngModel)]="searchQuery" name="searchBar" />
+          <div class='input-group col-12 col-sm-8 col-lg-10 mb-2 mb-sm-0'>
+            <input type='text' class="form-control" [(ngModel)]="searchQuery" name="searchBar"/>
           </div>
-          <div class='col-2'>
+          <div class='col'>
             <button type="submit" class='btn btn-primary'>Search</button>
           </div>
         </div>
       </form>
     </div>
-    <div class="row">
-      <div class='col-md-3'>
-        <div class='my-1'>
-          <div class='card'>
-            <div class='card-body'>
-              <h2 class="card-title">Legend</h2>
+
+    <div class="row no-gutters">
+      <!--Legend-->
+      <div class='col-md-3 p-3 p-md-0'>
+        <div class='card'>
+          <div class='card-body'>
+            <h2 class="card-title">Legend</h2>
             <div>
-                <div class='btn' [ngClass]="{'btn-primary': showProfessors}" (click) = 'changeMode(0)'>Professors</div>
-                <div class='btn' [ngClass] ="{'btn-primary': !showProfessors}" (click) = 'changeMode(1)'>Courses</div>
-                <hr>
-                <div>
-                  <div class="row no-gutters" *ngFor="let icon of icons">
-                    <fa-icon class="col-2" [icon]="icon.Name"></fa-icon>
-                    <h6 class="col-10">{{icon.Description}}</h6>
-                    <hr>
-                  </div>
-                  <br/>
-                  <small>* Over 80% of students for this professor received an A</small>
-                  <br/>
-                  <small>* H-index signifies how important the professor's research is</small>
+              <div class='btn' [ngClass]="{'btn-primary': showProfessors}" (click)='changeMode(0)'>Professors</div>
+              <div class='btn' [ngClass]="{'btn-primary': !showProfessors}" (click)='changeMode(1)'>Courses</div>
+              <hr>
+              <div>
+                <div class="row no-gutters" *ngFor="let icon of icons">
+                  <fa-icon class="col-2" [icon]="icon.Name"></fa-icon>
+                  <h6 class="col-10">{{icon.Description}}</h6>
+                  <hr>
                 </div>
+                <br/>
+                <small class="d-block mb-2">* Over 80% of students for this professor received an A</small>
+                <small>* H-index signifies how important the professor's research is</small>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div id="professorBar" class="col-md" *ngIf="showProfessors && results.length != 0">
-        <app-cards [data]="results" [type]="'professors'"></app-cards>
-      </div>
 
-      <div id="coursesBar" class="col-md" *ngIf="!showProfessors && this.results.length != 0">
-        <app-cards [data]="results" [type]="'courses'"></app-cards>
-      </div>
-      <div *ngIf = "this.results.length == 0" class="col-md-9">
+      <div class="col-md">
+        <div *ngIf="results.length != 0">
+          <app-cards *ngIf="showProfessors" [data]="results" [type]="'professors'"></app-cards>
+          <app-cards *ngIf="!showProfessors" [data]="results" [type]="'courses'"></app-cards>
+        </div>
+
+        <div *ngIf="this.results.length == 0">
           <div class='container'>
             <div class='card'>
               <div class='card-body'>
@@ -59,7 +61,10 @@
               </div>
             </div>
           </div>
+        </div>
+
       </div>
+
     </div>
   </div>
 </section>

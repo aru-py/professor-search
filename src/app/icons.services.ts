@@ -2,7 +2,7 @@ import { faPoo,faStar, faGlasses, faChessPawn,  faChessKnight,
   faChessRook, faChessQueen, faDragon } from '@fortawesome/free-solid-svg-icons'
 
 export class IconsService {
-  
+
   icons = [
   {
     "Name": faStar,

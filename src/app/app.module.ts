@@ -13,7 +13,7 @@ import { LandingComponent } from './landing/landing.component';
 import { ProfessorComponent } from './professor/professor.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { FooterComponent } from './footer/footer.component';
-import { FormComponent } from './form/form.component';
+import { FormComponent } from './landing/form/form.component';
 import { ResultsComponent } from './results/results.component';
 import { CourseComponent } from './course/course.component';
 import { IconsComponent } from './icons/icons.component';
