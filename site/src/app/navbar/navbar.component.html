@@ -1,0 +1,36 @@
+<div class='fixed-top bg-dark'>
+  <div class='container py-2'>
+    <div class="row">
+      <!--Logo-->
+      <div class="d-md-block col-12 col-md-4 text-center"
+           [ngClass]="{'d-none': !showLogo()}">
+        <h3
+          id="brand-logo"
+          class="text-danger navbar-brand my-auto"
+          routerLink="/">ProfessorSearch</h3>
+      </div>
+      <!--Search Bar-->
+      <form class="offset-md-1 offset-lg-3
+      col-12 col-md-7 col-lg-5 pt-1 d-md-block"
+            [ngClass]="{'d-none': showLogo()}">
+        <div class="input-group">
+          <input
+            [(ngModel)]="input"
+            class="form-control form-inline"
+            name="searchbar"
+            placeholder="Search for Professors or Classes"
+            type="text">
+          <div class="input-group-append d-inline">
+            <button
+              (click)="search()"
+              class="btn btn-primary"
+              type="submit">
+              Search
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

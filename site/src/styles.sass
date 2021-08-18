@@ -1,0 +1,23 @@
+@import "./_variables.scss"
+@import "~rfs/sass"
+
+@import "../node_modules/bootstrap/scss/bootstrap"
+
+// font: roboto mono
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap')
+
+$enable-responsive-font-sizes: true !important
+
+
+@include media-breakpoint-up(sm)
+  #primaryForm
+    max-width: 450px
+
+button
+  border-radius: 0 !important
+
+input
+  border-radius: 0 !important
+
+.card
+   transition: all .1s ease-in-out

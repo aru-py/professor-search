@@ -1,14 +1,18 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+# private data
+**/analytics.js
+site/src/assets/data
+
 # compiled output
-/dist
-/tmp
-/out-tsc
+site/dist
+site/tmp
+site/out-tsc
 # Only exists if Bazel was run
-/bazel-out
+site/bazel-out
 
 # dependencies
-/node_modules
+site/node_modules
 
 # profiling files
 chrome-profiler-events*.json
