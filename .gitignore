@@ -3,10 +3,12 @@
 # gitch
 .gitignore.*
 .git.*
+.gitchconfig
 
 # private data
 **/analytics.js
 site/src/assets/data
+/_etc
 
 # compiled output
 site/dist

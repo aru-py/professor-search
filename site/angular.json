@@ -97,7 +97,9 @@
             "styles": [
               "src/styles.sass"
             ],
-            "scripts": []
+            "scripts": [
+              "src/analytics.js"
+            ]
           }
         },
         "lint": {
